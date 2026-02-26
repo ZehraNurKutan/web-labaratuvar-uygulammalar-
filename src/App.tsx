@@ -1,4 +1,5 @@
 import './App.css'
+import profileImage from './assets/profile.png'
 
 function App() {
   return (
@@ -30,8 +31,9 @@ function App() {
           {/* 5.2 Alt Metin ve figure/figcaption kullanımı */}
           <figure>
             <img
-              src="https://via.placeholder.com/150"
+              src={profileImage}
               alt="Zehra Nur Kutan'ın vesikalık fotoğrafı"
+              style={{ width: '150px', height: '150px', objectFit: 'cover' }}
             />
             <figcaption>Zehra Nur Kutan - Web Geliştirici Adayı</figcaption>
           </figure>
