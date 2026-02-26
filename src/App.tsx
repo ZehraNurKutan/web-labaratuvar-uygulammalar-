@@ -1,28 +1,111 @@
 function App() {
   return (
-    <div style={{
-      padding: '40px',
-      fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
-      backgroundColor: '#f0f4f8',
-      borderRadius: '12px',
-      maxWidth: '600px',
-      margin: '40px auto',
-      boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-    }}>
-      <h1>Web Tasarımı ve Programlama</h1>
-      <h2>LAB-1</h2>
-      <p><strong>Ad Soyad:</strong> Zehra Nur Kutan</p>
-      <p><strong>Öğrenci No:</strong> [Öğrenci Numarası]</p>
-      <hr />
-      <h3>Hakkında</h3>
-      <p>Merhaba! Bu proje, Web Tasarımı ve Programlama dersi LAB-1 kapsamında oluşturulmuştur.</p>
-      <h3>Hobiler</h3>
-      <ul>
-        <li>Kod yazmak</li>
-        <li>Yeni teknolojiler keşfetmek</li>
-        <li>Kitap okumak</li>
-      </ul>
-    </div>
+    <>
+      <a href="#main-content" className="skip-link">Ana içeriğe atla</a>
+
+      <header>
+        <nav aria-label="Ana navigasyon">
+          <ul>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#projeler">Projeler</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <h1>Zehra Nur Kutan - Kişisel Portfolyo</h1>
+
+        <section id="hakkimda">
+          <h2>Hakkımda</h2>
+          <figure>
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Zehra Nur Kutan'ın vesikalık fotoğrafı"
+            />
+            <figcaption>Zehra Nur Kutan</figcaption>
+          </figure>
+          <p><strong>Öğrenci No:</strong> [Öğrenci Numarası]</p>
+          <p>Merhaba! Ben Zehra Nur Kutan. Bu sayfa Web Tasarımı ve Programlama dersi LAB-2 kapsamında, Semantik HTML5 ve Erişilebilirlik (a11y) ilkeleriyle geliştirilmiştir.</p>
+        </section>
+
+        <section id="projeler">
+          <h2>Projelerim</h2>
+          <article>
+            <h3>LAB-1: Ortam Kurulumu</h3>
+            <p>Vite, React ve Git akışının öğrenildiği ilk laboratuvar projesi.</p>
+          </article>
+          <article>
+            <h3>LAB-2: Semantik ve Erişilebilirlik</h3>
+            <p>Erişilebilir web sayfaları ve modern HTML5 yapısı üzerine çalışma.</p>
+          </article>
+        </section>
+
+        <section id="iletisim">
+          <h2>İletişim</h2>
+          <form action="#" method="POST" noValidate>
+            <fieldset>
+              <legend>İletişim Formu</legend>
+
+              <div className="form-group">
+                <label htmlFor="name">Ad Soyad:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  minLength={2}
+                  aria-describedby="name-error"
+                />
+                <small id="name-error" className="error-msg" role="alert"></small>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">E-posta:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  aria-describedby="email-error"
+                />
+                <small id="email-error" className="error-msg" role="alert"></small>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="subject">Konu:</label>
+                <select id="subject" name="subject" required aria-describedby="subject-error">
+                  <option value="">-- Seçiniz --</option>
+                  <option value="is">İş Teklifi</option>
+                  <option value="soru">Soru</option>
+                  <option value="oneri">Öneri</option>
+                </select>
+                <small id="subject-error" className="error-msg" role="alert"></small>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Mesajınız:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                  minLength={10}
+                  aria-describedby="message-error"
+                ></textarea>
+                <small id="message-error" className="error-msg" role="alert"></small>
+              </div>
+
+              <button type="submit">Gönder</button>
+            </fieldset>
+          </form>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Zehra Nur Kutan. Tüm hakları saklıdır.</p>
+      </footer>
+    </>
   )
 }
 
