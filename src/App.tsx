@@ -1,6 +1,14 @@
 function App() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{
+      padding: '40px',
+      fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
+      backgroundColor: '#f0f4f8',
+      borderRadius: '12px',
+      maxWidth: '600px',
+      margin: '40px auto',
+      boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+    }}>
       <h1>Web Tasarımı ve Programlama</h1>
       <h2>LAB-1</h2>
       <p><strong>Ad Soyad:</strong> Zehra Nur Kutan</p>
