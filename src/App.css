@@ -1,42 +1,204 @@
-#root {
-  max-width: 1280px;
+/* Genel sıfırlama (Uygulama-6) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background-color: #f8fafc;
+  color: #1e293b;
+  padding: 2.5rem;
+}
+
+/* Şablon Kapsayıcı */
+#main-content {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+header {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* 6.2 Skip link: normalde gizli, Tab ile görünür (Uygulama-6) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #1e3a8a;
+  color: white;
+  padding: 10px 20px;
+  z-index: 100;
+  transition: top 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom-right-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* 6.2 Focus göstergesi -- ASLA kaldırma (Uygulama-6) */
+:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 4px;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  color: #0f172a;
+  font-size: 2.25rem;
+}
+
+h2 {
+  border-bottom: 3px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+article {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #3b82f6;
+}
+
+article h3 {
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+figure {
+  margin: 2rem 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 6px solid #e2e8f0;
+  object-fit: cover;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+figcaption {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #64748b;
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Form stilleri (Uygulama-6) */
+fieldset {
+  border: 2px solid #f1f5f9;
+  padding: 2.5rem;
+  border-radius: 1rem;
 }
 
-.card {
-  padding: 2em;
+legend {
+  padding: 0 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #1e293b;
 }
 
-.read-the-docs {
-  color: #888;
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3b82f6;
+}
+
+button {
+  background-color: #2563eb;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.error-msg {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  margin-top: 5rem;
+  color: #94a3b8;
+  font-size: 1rem;
 }
